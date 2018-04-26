@@ -1,4 +1,3 @@
-package com.steam;
 
 import java.util.Random;
 

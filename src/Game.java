@@ -1,4 +1,3 @@
-package com.steam;
 
 public class Game {
     private State s = new InStore();

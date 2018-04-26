@@ -1,5 +1,3 @@
-package com.steam;
-
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +7,8 @@ public class Main {
         String input = "";
         Scanner in = new Scanner(System.in);
         Game G = new Game("Minecraft", "15");
+        CommandController CC = new CommandController();
+        CC.printCommands();
 
         System.out.println("Welcome to our StateFulSteam Store :D");
         label:

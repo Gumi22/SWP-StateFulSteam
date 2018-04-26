@@ -1,4 +1,3 @@
-package com.steam;
 
 public class Playing extends State {
 

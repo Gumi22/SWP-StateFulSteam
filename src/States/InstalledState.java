@@ -1,4 +1,3 @@
-package com.steam;
 
 public abstract class InstalledState extends State{
 

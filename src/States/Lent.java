@@ -1,4 +1,3 @@
-package com.steam;
 
 public class Lent extends State{
 
