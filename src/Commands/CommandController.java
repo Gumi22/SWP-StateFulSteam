@@ -7,6 +7,7 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.Stack;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
@@ -14,11 +15,34 @@ public class CommandController {
 
     private String commandPath = "";
     private ArrayList<Pair<String, Command>> myCommandList = new ArrayList<>();
+    private Stack<Command> myHistory = new Stack<>();
+
 
     public CommandController(){
         ClassLoader loader = CommandController.class.getClassLoader();
         commandPath = loader.getResource("CommandController.class").toString().substring(6, loader.getResource("CommandController.class").toString().indexOf("/CommandController.class"));
         loadCommands(commandPath);
+    }
+
+
+    public boolean executeCommand(String input, Game target){
+        boolean foundCommand = false;
+        for (Pair<String, Command> p: myCommandList) {
+            if(input.equals(p.getKey())){
+                foundCommand = true;
+                myHistory.push(p.getValue().execute(target));
+            }
+        }
+        return foundCommand;
+    }
+
+    public void undoCommand(){
+        try{
+            myHistory.pop().undo();
+        }catch (Exception e){
+            //e.printStackTrace();
+            System.out.println("Not Possible");
+        }
     }
 
     public void printCommands(){
@@ -28,26 +52,8 @@ public class CommandController {
         }
     }
 
-    //Todo: Commands für alles
-    //Todo: Undo funktion machen indem man das Command in eine executed List gibt
-    //Todo: Mindestens ein Makro
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void loadCommands(String path){
-        //myCommandList.clear();
+        myCommandList.clear();
 
         File folder = new File(path);
         File[] listOfFiles = folder.listFiles();

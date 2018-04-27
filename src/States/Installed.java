@@ -34,17 +34,6 @@ public class Installed extends State {
         g.setState(new Downloaded());
     }
 
-    @Override
-    public void delete(Game g) {
-        deinstall(g);
-        g.delete();
-    }
-
-    @Override
-    public void sell(Game g) {
-        deinstall(g);
-        g.sell();
-    }
 
     @Override
     public void lend(Game g) {

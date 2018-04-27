@@ -1,11 +1,9 @@
 
 public interface Command {
 
-    boolean canHandle();
-
     Command execute(Game target);
 
-    void SetTarget(Game target);
+    void setTarget(Game target);
 
     void undo();
 }

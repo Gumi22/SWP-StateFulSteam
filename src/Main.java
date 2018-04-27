@@ -6,61 +6,43 @@ public class Main {
 
         String input = "";
         Scanner in = new Scanner(System.in);
-        Game G = new Game("Minecraft", "15");
+
+        Game G1 = new Game("Minecraft", "15");
+        Game G2 = new Game("Dark Souls", "50");
+        Game active = G1;
+
         CommandController CC = new CommandController();
-        CC.printCommands();
+        //CC.printCommands();
 
         System.out.println("Welcome to our StateFulSteam Store :D");
+
         label:
         while (true) {
-            input = in.nextLine();
+            input = in.nextLine().toLowerCase();
 
-            switch (input) {
-                case "exit":
-                    break label;
-                case "show":
-                    System.out.println("Name: " + G.getName());
-                    System.out.println("Price: " + G.getPrice());
-                    System.out.println("State: " + G.getState());
-                    break;
-                case "buy":
-                    G.buy();
-                    break;
-                case "download":
-                    G.download();
-                    break;
-                case "install":
-                    G.install();
-                    break;
-                case "start":
-                    G.start();
-                    break;
-                case "pause":
-                    G.pause();
-                    break;
-                case "resume":
-                    G.resume();
-                    break;
-                case "quit":
-                    G.quit();
-                    break;
-                case "deinstall":
-                    G.deinstall();
-                    break;
-                case "delete":
-                    G.delete();
-                    break;
-                case "sell":
-                    G.sell();
-                    break;
-                case "lend":
-                    G.lend();
-                    break;
-                case "update":
-                    G.update();
-                    break;
+            if (!CC.executeCommand(input, active)) { //if not command by user it must be admin functionality
+                switch (input) {
+                    case "exit":
+                        break label;
+                    case "undo":
+                        CC.undoCommand();
+                        break;
+                    case "help":
+                        CC.printCommands();
+                        break;
+                    case "change":
+                        if(active == G1){
+                            active = G2;
+                        }
+                        else {
+                            active = G1;
+                        }
+                        break;
+                }
             }
         }
 
+
     }
+
 }

@@ -1,13 +1,13 @@
-public class Buy implements Command{
+public class Deinstall implements Command{
 
     Game target;
 
     @Override
     public Command execute(Game target) {
-        target.buy();
-        Command executed = new Buy();
-        executed.setTarget(target);
-        return executed;
+        target.deinstall();
+        Command cm = new Deinstall();
+        cm.setTarget(target);
+        return cm;
     }
 
     @Override
@@ -17,6 +17,6 @@ public class Buy implements Command{
 
     @Override
     public void undo() {
-        target.sell();
+        target.install();
     }
 }

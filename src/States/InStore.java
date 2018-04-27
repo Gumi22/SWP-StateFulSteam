@@ -7,21 +7,4 @@ public class InStore extends State {
         g.setState(new Bought());
     }
 
-    @Override
-    public void download(Game g) {
-        buy(g);
-        g.download();
-    }
-
-    @Override
-    public void install(Game g) {
-        buy(g);
-        g.install();
-    }
-
-    @Override
-    public void start(Game g) {
-        buy(g);
-        g.start();
-    }
 }

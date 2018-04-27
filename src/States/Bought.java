@@ -7,17 +7,6 @@ public class Bought extends State{
         g.setState(new Downloaded());
     }
 
-    @Override
-    public void install(Game g) {
-        download(g);
-        g.install();
-    }
-
-    @Override
-    public void start(Game g) {
-        install(g);
-        g.start();
-    }
 
     @Override
     public void sell(Game g) {
