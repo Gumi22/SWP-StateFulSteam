@@ -125,7 +125,7 @@ public class CommandController {
 
     private void addClassFile(String s){
         try {
-            if(!s.substring(s.lastIndexOf("/") +1, s.indexOf(".class")).equals("Command")){
+            if(!s.substring(s.lastIndexOf("/") +1, s.indexOf(".class")).equals("Command") && !s.substring(s.lastIndexOf("/") +1, s.indexOf(".class")).equals("Makro")){
                 addClassFile(URLClassLoader.newInstance(new URL[]{new URL("file:" + s)}), s.substring(s.lastIndexOf("/") +1, s.indexOf(".class")));
             }
         } catch (MalformedURLException e) {

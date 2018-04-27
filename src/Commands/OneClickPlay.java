@@ -1,29 +1,18 @@
-public class OneClickPlay implements Command {
+import java.util.Stack;
 
-    private Game t;
+public class OneClickPlay extends Makro {
+
 
     @Override
     public Command execute(Game target) {
-        target.buy();
-        target.download();
-        target.install();
-        target.update();
-        target.start();
-        Command cm = new OneClickPlay();
-        cm.setTarget(target);
-        return cm;
+
+        executeCommand(new Buy(), target);
+        executeCommand(new Download(), target);
+        executeCommand(new Install(), target);
+        executeCommand(new Update(), target);
+        executeCommand(new Start(), target);
+
+        return copyOfThisMakro(this);
     }
 
-    @Override
-    public void setTarget(Game target)  {
-        t = target;
-    }
-
-    @Override
-    public void undo() {
-        t.quit();
-        t.deinstall();
-        t.delete();
-        t.sell();
-    }
 }
