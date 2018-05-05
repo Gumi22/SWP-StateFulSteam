@@ -12,4 +12,14 @@ public class Playing extends State {
         System.out.println("Pausing Game...");
         g.setState(new Paused());
     }
+
+    @Override
+    public boolean canQuit() {
+        return true;
+    }
+
+    @Override
+    public boolean canPause() {
+        return true;
+    }
 }

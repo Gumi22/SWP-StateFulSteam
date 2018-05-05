@@ -20,6 +20,11 @@ public class Makro implements Command{
     }
 
     @Override
+    public boolean canExecute(Game target) {
+        return false;
+    }
+
+    @Override
     public Command execute(Game target) {
         return new Makro();
     }

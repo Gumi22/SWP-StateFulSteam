@@ -15,4 +15,9 @@ public class OneClickPlay extends Makro {
         return copyOfThisMakro(this);
     }
 
+    @Override
+    public boolean canExecute(Game target) {
+        return target.canBuy();
+    }
+
 }

@@ -19,4 +19,9 @@ public class Sell  implements Command {
     public void undo() {
         t.buy();
     }
+
+    @Override
+    public boolean canExecute(Game target) {
+        return target.canSell();
+    }
 }

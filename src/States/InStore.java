@@ -7,4 +7,8 @@ public class InStore extends State {
         g.setState(new Bought());
     }
 
+    @Override
+    public boolean canBuy() {
+        return true;
+    }
 }

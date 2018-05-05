@@ -19,4 +19,9 @@ public class Update implements Command {
     public void undo() {
         System.out.println("Not possible, who would do that?");
     }
+
+    @Override
+    public boolean canExecute(Game target) {
+        return target.canUpdate();
+    }
 }

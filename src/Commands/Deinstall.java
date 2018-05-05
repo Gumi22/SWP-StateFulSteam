@@ -19,4 +19,9 @@ public class Deinstall implements Command{
     public void undo() {
         target.install();
     }
+
+    @Override
+    public boolean canExecute(Game target) {
+        return target.canDeinstall();
+    }
 }

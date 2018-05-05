@@ -19,4 +19,9 @@ public class Download implements Command {
     public void undo() {
         target.delete();
     }
+
+    @Override
+    public boolean canExecute(Game target) {
+        return target.canDownload();
+    }
 }

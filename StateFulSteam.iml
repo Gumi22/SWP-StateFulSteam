@@ -10,6 +10,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/States" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Commands" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Commands/Commands" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fxml" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Mediator" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

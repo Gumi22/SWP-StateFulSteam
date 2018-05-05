@@ -2,10 +2,10 @@
 import java.util.Random;
 
 public class Installed extends State {
-    InstalledState state = null;
+    protected InstalledState state = null;
+    private static final Random rnd = new Random(12354);
 
     public Installed(){
-        Random rnd = new Random(12345);
         if(rnd.nextBoolean()){
             state = new Outdated();
         }
@@ -39,5 +39,25 @@ public class Installed extends State {
     public void lend(Game g) {
         System.out.println("You've lent you Game to Kevin, make sure you get it back!");
         g.setState(new Lent(this));
+    }
+
+    @Override
+    public boolean canLend() {
+        return true;
+    }
+
+    @Override
+    public boolean canStart() {
+        return this.state.canStart();
+    }
+
+    @Override
+    public boolean canUpdate() {
+        return this.state.canUpdate();
+    }
+
+    @Override
+    public boolean canDeinstall() {
+        return true;
     }
 }

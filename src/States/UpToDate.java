@@ -13,4 +13,9 @@ public class UpToDate extends InstalledState {
     public void update(Game g, Installed i) {
         System.out.println("Game is already up to date :D");
     }
+
+    @Override
+    public boolean canStart() {
+        return true;
+    }
 }

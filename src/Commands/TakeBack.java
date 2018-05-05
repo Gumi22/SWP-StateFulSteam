@@ -19,4 +19,9 @@ public class TakeBack implements Command {
     public void undo() {
         t.lend();
     }
+
+    @Override
+    public boolean canExecute(Game target) {
+        return target.canTakeBack();
+    }
 }

@@ -13,4 +13,13 @@ public class Paused extends State {
         g.setState(new Installed());
     }
 
+    @Override
+    public boolean canResume() {
+        return true;
+    }
+
+    @Override
+    public boolean canQuit() {
+        return true;
+    }
 }

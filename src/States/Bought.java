@@ -19,4 +19,19 @@ public class Bought extends State{
         System.out.println("You've lent you Game to Kevin, make sure you get it back!");
         g.setState(new Lent(this));
     }
+
+    @Override
+    public boolean canSell() {
+        return true;
+    }
+
+    @Override
+    public boolean canDownload() {
+        return true;
+    }
+
+    @Override
+    public boolean canLend() {
+        return true;
+    }
 }

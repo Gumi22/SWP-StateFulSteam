@@ -19,4 +19,9 @@ public class Pause implements Command {
     public void undo() {
         t.resume();
     }
+
+    @Override
+    public boolean canExecute(Game target) {
+        return target.canPause();
+    }
 }

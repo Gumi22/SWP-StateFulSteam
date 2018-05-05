@@ -9,4 +9,9 @@ public class BuyForAFriend extends Makro {
         return copyOfThisMakro(this);
     }
 
+    @Override
+    public boolean canExecute(Game target) {
+        return target.canBuy();
+    }
+
 }

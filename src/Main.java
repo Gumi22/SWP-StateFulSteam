@@ -1,10 +1,15 @@
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
+
 import java.util.Scanner;
 
-public class Main {
+public class Main extends Application {
 
     public static void main(String[] args) {
+        launch(args);
 
-        String input = "";
+        /*String input = "";
         Scanner in = new Scanner(System.in);
 
         Game G1 = new Game("Minecraft", "15");
@@ -40,9 +45,20 @@ public class Main {
                         break;
                 }
             }
-        }
-
-
+        }*/
     }
 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        try {
+            FXMLLoader fl = new FXMLLoader();
+            fl.setLocation(getClass().getResource("Main.fxml"));
+            fl.load();
+
+            Stage stage = (Stage)fl.getRoot();
+            stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

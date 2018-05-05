@@ -12,4 +12,9 @@ public class Lent extends State{
         System.out.println("You took your Game back from Kevin, congrats");
         g.setState(previousState);
     }
+
+    @Override
+    public boolean canTakeBack() {
+        return true;
+    }
 }

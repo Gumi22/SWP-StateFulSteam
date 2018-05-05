@@ -19,4 +19,9 @@ public class Start implements Command {
     public void undo() {
         t.quit();
     }
+
+    @Override
+    public boolean canExecute(Game target) {
+        return target.canStart();
+    }
 }

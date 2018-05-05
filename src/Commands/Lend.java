@@ -19,4 +19,9 @@ public class Lend implements Command {
     public void undo() {
         t.takeBack();
     }
+
+    @Override
+    public boolean canExecute(Game target) {
+        return target.canLend();
+    }
 }

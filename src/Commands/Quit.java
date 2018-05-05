@@ -19,4 +19,9 @@ public class Quit implements Command{
     public void undo() {
         t.start();
     }
+
+    @Override
+    public boolean canExecute(Game target) {
+        return target.canQuit();
+    }
 }

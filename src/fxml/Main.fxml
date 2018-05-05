@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.stage.Stage?>
+
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Button?>
+<Stage title="Main"
+       xmlns="http://javafx.com/javafx"
+       xmlns:fx="http://javafx.com/fxml"
+       fx:controller="MainController">
+    <scene>
+        <Scene width="700" height="500">
+            <root>
+
+
+                <BorderPane
+                        prefHeight="400.0" prefWidth="600.0">
+                    <top>
+                        <MenuBar focusTraversable="true">
+                            <menus>
+                                <Menu text="Datei">
+                                    <items>
+                                        <MenuItem text="Schließen" onAction="#onBtnExit"/>
+                                    </items>
+                                </Menu>
+                                <Menu text="Edit">
+                                    <items>
+                                        <MenuItem fx:id="newGameMenuItem" text="Damn hinzufügen" onAction="#onBtnNewGame"/>
+                                        <MenuItem fx:id="UndoMenuItem" text="Rückgängig (Undo)" onAction="#onBtnUndo"/>
+                                    </items>
+                                </Menu>
+                                <Menu text="Options">
+                                    <items>
+                                        <MenuItem text="Über" onAction="#onBtnAbout"/>
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+                    </top>
+
+
+
+                    <left>
+                        <TableView fx:id="GameList"/>
+                    </left>
+
+                    <right>
+                        <VBox>
+
+                            <Button fx:id="buyBtn" onAction="#buy">Kaufen</Button>
+                            <Button fx:id="buyForAFriendBtn" onAction="#buyForAFriend">Für einen Freund kaufen</Button>
+                            <Button fx:id="deinstallBtn" onAction="#deinstall">Deinstallieren</Button>
+                            <Button fx:id="deleteBtn" onAction="#delete">Löschen</Button>
+                            <Button fx:id="downloadBtn" onAction="#download">Herunterladen</Button>
+                            <Button fx:id="installBtn" onAction="#install">Installieren</Button>
+                            <Button fx:id="lendBtn" onAction="#lend">Verleihen</Button>
+                            <Button fx:id="oneClickPlayBtn" onAction="#OneClickPlay">Direkt Spielen</Button>
+                            <Button fx:id="pauseBtn" onAction="#pause">Pausieren</Button>
+                            <Button fx:id="quitBtn" onAction="#quit">Beenden</Button>
+                            <Button fx:id="resumeBtn" onAction="#resume">Fortsetzen</Button>
+                            <Button fx:id="sellBtn" onAction="#sell">Verkaufen</Button>
+                            <Button fx:id="showBtn" onAction="#show">Zeigen</Button>
+                            <Button fx:id="startBtn" onAction="#start">Starten</Button>
+                            <Button fx:id="takeBackBtn" onAction="#takeBack">Zurückverlangen</Button>
+                            <Button fx:id="updateBtn" onAction="#update">Aktualisieren</Button>
+                        </VBox>
+                    </right>
+
+                </BorderPane>
+
+
+
+            </root>
+        </Scene>
+    </scene>
+</Stage>

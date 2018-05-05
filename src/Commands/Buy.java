@@ -3,6 +3,11 @@ public class Buy implements Command{
     Game target;
 
     @Override
+    public boolean canExecute(Game target) {
+        return target.canBuy();
+    }
+
+    @Override
     public Command execute(Game target) {
         target.buy();
         Command executed = new Buy();
